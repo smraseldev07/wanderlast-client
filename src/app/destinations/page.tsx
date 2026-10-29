@@ -15,7 +15,7 @@ const DestinationsPage = async() => {
     let requestFailed = false;
 
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/destinations`)
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/destinations`,{ cache: 'no-store' })
       if (res.ok) data = await res.json()
     } catch {
       requestFailed = true;
