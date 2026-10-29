@@ -17,8 +17,12 @@ const DestinationsPage = async () => {
   try {
     const url = `${process.env.NEXT_PUBLIC_API_URL}/destinations`
     const res = await fetch(url, { cache: 'no-store' })
-    if (!res.ok) throw new Error(`Status ${res.status} from ${url}`)
+    console.log(res);
+    
+    // if (!res.ok) throw new Error(`Status ${res.status} from ${url}`)
     data = await res.json()
+  console.log(data);
+  
   } catch (err) {
     console.error('Destinations fetch failed:', err)
     requestFailed = true
